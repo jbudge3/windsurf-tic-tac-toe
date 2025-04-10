@@ -210,10 +210,17 @@ describe('Game Utility Functions', () => {
 
   // Test getGameStatus function
   describe('getGameStatus', () => {
-    it('should return the correct status for a game in progress', () => {
+    it('should return "First player" when the game has not started yet', () => {
       const board: Board = Array(9).fill(null);
       const status = getGameStatus(board, true, 0);
-      expect(status).toBe('Next player: X');
+      expect(status).toBe('First player: 🏄 (X)');
+    });
+
+    it('should return "Next player" when the game is in progress', () => {
+      const board: Board = Array(9).fill(null);
+      board[0] = 'X';
+      const status = getGameStatus(board, false, 1);
+      expect(status).toBe('Next player: 🌊 (O)');
     });
 
     it('should return the correct status when X wins', () => {
@@ -223,7 +230,7 @@ describe('Game Utility Functions', () => {
         null, null, null
       ];
       const status = getGameStatus(board, false, 5);
-      expect(status).toBe('Winner: X');
+      expect(status).toBe('Winner: 🏄 (X)');
     });
 
     it('should return the correct status when O wins', () => {
@@ -233,7 +240,7 @@ describe('Game Utility Functions', () => {
         null, 'O', null
       ];
       const status = getGameStatus(board, true, 6);
-      expect(status).toBe('Winner: O');
+      expect(status).toBe('Winner: 🌊 (O)');
     });
 
     it('should return the correct status for a draw', () => {

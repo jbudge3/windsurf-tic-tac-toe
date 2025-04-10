@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Board from './Board';
-import { Board as BoardType } from '../utils/gameUtils';
+import { Board as BoardType, getPlayerEmoji } from '../utils/gameUtils';
 
 describe('Board Component', () => {
   test('renders 9 squares', () => {
@@ -27,15 +27,15 @@ describe('Board Component', () => {
     const buttons = screen.getAllByRole('button');
     
     // Check that each square has the correct value
-    expect(buttons[0].textContent).toBe('X');
-    expect(buttons[1].textContent).toBe('O');
-    expect(buttons[2].textContent).toBe('X');
+    expect(buttons[0].textContent).toBe(getPlayerEmoji('X'));
+    expect(buttons[1].textContent).toBe(getPlayerEmoji('O'));
+    expect(buttons[2].textContent).toBe(getPlayerEmoji('X'));
     expect(buttons[3].textContent).toBe('');
-    expect(buttons[4].textContent).toBe('O');
+    expect(buttons[4].textContent).toBe(getPlayerEmoji('O'));
     expect(buttons[5].textContent).toBe('');
     expect(buttons[6].textContent).toBe('');
     expect(buttons[7].textContent).toBe('');
-    expect(buttons[8].textContent).toBe('X');
+    expect(buttons[8].textContent).toBe(getPlayerEmoji('X'));
   });
 
   test('calls onClick with correct index when a square is clicked', () => {

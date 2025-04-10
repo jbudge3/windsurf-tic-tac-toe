@@ -1,5 +1,17 @@
 // Define types for the game
 export type Player = 'X' | 'O' | null;
+
+// Emoji mapping for players
+export const PLAYER_EMOJIS: Record<'X' | 'O', string> = {
+  'X': '🏄',  // Surfer emoji
+  'O': '🌊'   // Wave emoji
+};
+
+// Function to get emoji for a player
+export const getPlayerEmoji = (player: Player): string => {
+  if (!player) return '';
+  return PLAYER_EMOJIS[player];
+};
 export type Board = Player[];
 
 export interface GameState {
@@ -187,10 +199,12 @@ export const getGameStatus = (squares: Board, xIsNext: boolean, moveCount: numbe
   
   switch (status.type) {
     case 'winner':
-      return `Winner: ${status.player}`;
+      return `Winner: ${getPlayerEmoji(status.player)} (${status.player})`;
     case 'draw':
       return 'Game ended in a draw';
     case 'next':
-      return `Next player: ${status.player}`;
+      return moveCount === 0 
+        ? `First player: ${getPlayerEmoji(status.player)} (${status.player})` 
+        : `Next player: ${getPlayerEmoji(status.player)} (${status.player})`;
   }
 };

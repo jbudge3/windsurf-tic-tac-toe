@@ -1,5 +1,5 @@
 import React from 'react';
-import { Player } from '../utils/gameUtils';
+import { Player, getPlayerEmoji } from '../utils/gameUtils';
 
 interface SquareProps {
   value: Player;
@@ -12,7 +12,7 @@ const Square: React.FC<SquareProps> = ({ value, onClick }) => {
       className="square" 
       onClick={onClick}
     >
-      {value}
+      <span className="player-symbol">{getPlayerEmoji(value)}</span>
     </button>
   );
 };

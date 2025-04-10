@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Square from './Square';
+import { getPlayerEmoji } from '../utils/gameUtils';
 
 describe('Square Component', () => {
   test('renders with null value', () => {
@@ -18,7 +19,7 @@ describe('Square Component', () => {
     
     const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
-    expect(button.textContent).toBe('X');
+    expect(button.textContent).toBe(getPlayerEmoji('X'));
   });
 
   test('renders with O value', () => {
@@ -27,7 +28,7 @@ describe('Square Component', () => {
     
     const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
-    expect(button.textContent).toBe('O');
+    expect(button.textContent).toBe(getPlayerEmoji('O'));
   });
 
   test('calls onClick when clicked', () => {
