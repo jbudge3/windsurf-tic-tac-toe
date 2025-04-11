@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Board from './Board';
 import Confetti from 'react-confetti';
 import {
-  Board as BoardType,
   GameState,
   calculateWinner,
   handleMove,
