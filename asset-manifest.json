@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/windsurf-tic-tac-toe/static/css/main.253520e1.css",
+    "main.js": "/windsurf-tic-tac-toe/static/js/main.d5e053ca.js",
+    "static/js/453.e036e8b5.chunk.js": "/windsurf-tic-tac-toe/static/js/453.e036e8b5.chunk.js",
+    "index.html": "/windsurf-tic-tac-toe/index.html",
+    "main.253520e1.css.map": "/windsurf-tic-tac-toe/static/css/main.253520e1.css.map",
+    "main.d5e053ca.js.map": "/windsurf-tic-tac-toe/static/js/main.d5e053ca.js.map",
+    "453.e036e8b5.chunk.js.map": "/windsurf-tic-tac-toe/static/js/453.e036e8b5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.253520e1.css",
+    "static/js/main.d5e053ca.js"
+  ]
+}
